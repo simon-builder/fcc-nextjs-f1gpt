@@ -44,7 +44,6 @@ export async function POST(req: Request) {
 
       docContext = JSON.stringify(docsMap);
     } catch (e) {
-      console.error(e);
       return new Response("Internal server error collection", { status: 500 });
     }
 
@@ -74,7 +73,6 @@ export async function POST(req: Request) {
     return new StreamingTextResponse(stream);
     // return new streamText.toDataStreamResponse(stream);
   } catch (e) {
-    console.error(e);
     return new Response("Internal server error embedding", { status: 500 });
   }
 }
